@@ -1,0 +1,27 @@
+<div id="createTwit" class="panel right">
+    <h1>Create a Twit</h1>
+    <p>
+    <form>
+        <textarea name="text" class="TwitText"></textarea>
+        <input type="submit" value="Twit!">
+    </form>
+    </p>
+</div>
+<div id="Twits" class="panel left">
+    <h1>Your Twit Profile</h1>
+    <div class="TwitWrapper">
+        <img class="avatar" src="<%= @user.avatar_url %>">
+        <span class="name"><%= @user.name %></span> @<%= @user.username %>
+        <p>
+        XX Twits
+        <span class="spacing">XX Followers</span>
+        <span class="spacing">XX Following</span>
+        </p>
+    </div>
+</div>
+<div class="panel left">
+    <h1>Your Twits</h1>
+    <div class="TwitWrapper">
+        Twits coming . . .
+    </div>
+</div>

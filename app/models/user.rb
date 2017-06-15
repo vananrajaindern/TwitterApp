@@ -10,12 +10,12 @@ class User < ApplicationRecord
 
 
 
-	attr_accessible :avatar_url, :email, :first_name, :last_name, :password, :password_confirmation, :has_secure_password, :username, 
+	attr_accessor :avatar_url, :email, :first_name, :last_name, :password, :password_confirmation, :has_secure_password, :username
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :username, uniqueness:true, presence: true
-	validates :email, uniqueness: true, presence: true, format: { with: /^[\w.+-]+@([\w]+.)+\w+$/ }
+	#validates :email, uniqueness: true, presence: true, format: { with: /^[\w.+-]+@([\w]+.)+\w+$/ }
 
 
 
