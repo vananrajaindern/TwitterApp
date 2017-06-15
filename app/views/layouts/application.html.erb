@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TwitterApp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<head>
+    <link rel="stylesheet/less" href="/style.less">
+    <script src="/less.js"></script>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <img src="/gfx/logo.jpg">
+            <span>Twitter</span>
+        </div>
+    </header>
+    <div id="content">
+        <div class="wrapper">
+            <% flash.each do |name, msg| %>
+                <%= content_tag :div, msg, class: "flash #{name}" %>
+            <% end %>
+            <%= yield %>
+        </div>
+    </div>
+    <footer>
+        <div class="wrapper">
+            © 2017 Twitter<img src="/gfx/footerlogo.png">
+        </div>
+    </footer>
+</body>
 </html>
